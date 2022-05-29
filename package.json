@@ -1,14 +1,24 @@
 {
   "name": "node_killer",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "license": "UNLICENSED",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "start:dev": "node -r ts-node/register -r dotenv/config src/index.ts",
+    "lint": "eslint --quiet --ext ts,js .",
+    "lint:fix": "eslint --fix --ext .ts ."
+  },
   "dependencies": {
     "moment": "^2.24.0",
     "ts-node": "^10.7.0",
     "typescript": "^4.6.3"
   },
   "devDependencies": {
-    "@types/node": "^17.0.23"
+    "@types/node": "^17.0.23",
+    "@typescript-eslint/eslint-plugin": "^2.2.0",
+    "@typescript-eslint/parser": "^2.2.0",
+    "eslint": "^6.4.0"
   }
 }
